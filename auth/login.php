@@ -42,12 +42,13 @@ $inactive = isset($_GET['inactive']);
 <link rel="stylesheet" href="<?php echo e(url('assets/css/style.css')); ?>">
 </head>
 <body class="login-bg">
-<div class="container d-flex align-items-center justify-content-center" style="min-height:100vh">
+<div class="container d-flex align-items-center justify-content-center py-4" style="min-height:100vh">
+    <div class="row align-items-center justify-content-center g-4 w-100">
     <div class="col-11 col-sm-8 col-md-6 col-lg-4">
         <div class="card shadow-lg border-0">
             <div class="card-body p-4 p-md-5">
                 <div class="text-center mb-4">
-                    <i class="bi bi-mortarboard-fill display-4 text-warning"></i>
+                    <img src="<?php echo e(url('assets/img/marksheet-logo.png')); ?>" class="login-logo mb-2" alt="Certified Excellence">
                     <h3 class="mt-2 fw-bold text-rms-primary"><?php echo e(APP_NAME); ?></h3>
                     <p class="text-muted small mb-0">College-Level Result Management System</p>
                 </div>
@@ -63,14 +64,14 @@ $inactive = isset($_GET['inactive']);
                         <label class="form-label fw-semibold">Username</label>
                         <div class="input-group">
                             <span class="input-group-text"><i class="bi bi-person"></i></span>
-                            <input type="text" class="form-control" id="username" name="username" placeholder="Enter username / student ID" required autofocus>
+                            <input type="text" class="form-control" id="username" name="username" placeholder="Enter username / student ID" required autofocus autocomplete="username">
                         </div>
                     </div>
                     <div class="mb-4">
                         <label class="form-label fw-semibold">Password</label>
                         <div class="input-group">
                             <span class="input-group-text"><i class="bi bi-key"></i></span>
-                            <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required autocomplete="current-password">
                             <button type="button" class="btn btn-outline-secondary" id="togglePassword" aria-label="Show password" title="Show password">
                                 <i class="bi bi-eye" aria-hidden="true"></i>
                             </button>
@@ -78,13 +79,58 @@ $inactive = isset($_GET['inactive']);
                     </div>
                     <button type="submit" class="btn btn-rms w-100 py-2 fw-semibold"><i class="bi bi-box-arrow-in-right me-1"></i> Sign In</button>
                     <div class="border-top mt-4 pt-3">
-                        <div class="d-flex justify-content-between align-items-center mb-2">
-                            <span class="small text-muted">For project demonstration</span>
-                            <span class="badge text-bg-light border"><?php echo e(DEMO_USERNAME . ' / ' . DEMO_PASSWORD); ?></span>
+                        <div class="demo-login-copy mb-3">
+                            <span class="small text-muted">Choose a role to enter the project demo</span>
                         </div>
-                        <button type="button" class="btn btn-outline-primary w-100" id="demoLogin">
-                            <i class="bi bi-play-circle me-1"></i> Demo Login
-                        </button>
+                        <div class="row g-2">
+                            <div class="col-12">
+                                <button type="button" class="btn btn-outline-primary w-100 demo-login" data-username="<?php echo e(DEMO_USERNAME); ?>" data-password="<?php echo e(DEMO_PASSWORD); ?>">
+                                    <i class="bi bi-shield-lock-fill me-1"></i> Admin Demo
+                                    <span class="d-block small opacity-75"><?php echo e(DEMO_USERNAME); ?> / <?php echo e(DEMO_PASSWORD); ?></span>
+                                </button>
+                            </div>
+                            <div class="col-sm-6">
+                                <button type="button" class="btn btn-outline-success w-100 demo-login" data-username="<?php echo e(DEMO_TEACHER_USERNAME); ?>" data-password="<?php echo e(DEMO_TEACHER_PASSWORD); ?>">
+                                    <i class="bi bi-person-video3 me-1"></i> Teacher
+                                    <span class="d-block small opacity-75"><?php echo e(DEMO_TEACHER_USERNAME); ?></span>
+                                </button>
+                            </div>
+                            <div class="col-sm-6">
+                                <button type="button" class="btn btn-outline-warning w-100 demo-login" data-username="<?php echo e(DEMO_STUDENT_USERNAME); ?>" data-password="<?php echo e(DEMO_STUDENT_PASSWORD); ?>">
+                                    <i class="bi bi-mortarboard-fill me-1"></i> Student
+                                    <span class="d-block small opacity-75"><?php echo e(DEMO_STUDENT_USERNAME); ?></span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-11 col-sm-8 col-md-6 col-lg-4 col-xl-3">
+                            <aside class="login-project-card card border-0 shadow-lg">
+                                <div class="card-body p-4">
+                                    <div class="d-flex align-items-center gap-3 mb-3">
+                                        <div class="project-builder-avatar">SS</div>
+                                        <div>
+                                            <div class="small text-uppercase text-muted fw-semibold">Project Builder</div>
+                                            <h5 class="mb-0 text-rms-primary"><?php echo e(PROJECT_BUILDER); ?></h5>
+                                        </div>
+                                    </div>
+                                    <p class="small text-muted mb-3">Built as a college-level academic result management project.</p>
+                                    <dl class="row small mb-3">
+                                        <dt class="col-5">Programme</dt>
+                                        <dd class="col-7"><?php echo e(PROJECT_PROGRAMME); ?></dd>
+                                        <dt class="col-5">Project</dt>
+                                        <dd class="col-7">Result Management System</dd>
+                                    </dl>
+                                    <div class="d-grid gap-2">
+                                        <a class="btn btn-sm btn-outline-dark" href="<?php echo e(PROJECT_GITHUB); ?>" target="_blank" rel="noopener">
+                                            <i class="bi bi-github me-1"></i> View my GitHub
+                                        </a>
+                                        <a class="btn btn-sm btn-outline-primary" href="<?php echo e(PROJECT_WEBSITE); ?>" target="_blank" rel="noopener">
+                                            <i class="bi bi-globe2 me-1"></i> Visit my website
+                                        </a>
+                                    </div>
+                                </div>
+                            </aside>
+                        </div>
+                        </div>
                     </div>
                 </form>
             </div>
@@ -104,10 +150,12 @@ $inactive = isset($_GET['inactive']);
         this.setAttribute('title', isHidden ? 'Hide password' : 'Show password');
     });
 
-    document.getElementById('demoLogin').addEventListener('click', function () {
-        document.getElementById('username').value = <?php echo json_encode(DEMO_USERNAME); ?>;
-        document.getElementById('password').value = <?php echo json_encode(DEMO_PASSWORD); ?>;
+    document.querySelectorAll('.demo-login').forEach(function (button) {
+        button.addEventListener('click', function () {
+        document.getElementById('username').value = this.dataset.username;
+        document.getElementById('password').value = this.dataset.password;
         document.getElementById('loginForm').submit();
+        });
     });
 </script>
 </body>

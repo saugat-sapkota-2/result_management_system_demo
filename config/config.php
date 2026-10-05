@@ -6,21 +6,29 @@
 
 // ---- Database credentials (XAMPP default shown) ----
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'bca_rms');
+define('DB_NAME', 'bca_rms_demo');
 define('DB_USER', 'root');
 define('DB_PASS', '');
 define('DB_CHARSET', 'utf8mb4');
 
 // ---- Base URL (adjust if the project is placed elsewhere) ----
 if (!defined('BASE_URL')) {
-    define('BASE_URL', '/result_mgmt_system');
+    define('BASE_URL', '/result_mgmt_system_demo');
 }
 
 // ---- Application ----
-define('APP_NAME', 'BCA Result Management System');
+define('APP_NAME', ' Result Management System');
+define('PROJECT_BUILDER', 'Saugat Sapkota');
+define('PROJECT_PROGRAMME', 'BCA 4th Semester');
+define('PROJECT_WEBSITE', 'https://saugatsapkota1.com.np');
+define('PROJECT_GITHUB', 'https://github.com/saugat-sapkota-1');
 // Demo credentials used by the one-click login on the demo sign-in screen.
 define('DEMO_USERNAME', 'admin');
 define('DEMO_PASSWORD', 'admin123');
+define('DEMO_TEACHER_USERNAME', 'demo_teacher');
+define('DEMO_TEACHER_PASSWORD', 'teacher123');
+define('DEMO_STUDENT_USERNAME', 'demo_student');
+define('DEMO_STUDENT_PASSWORD', 'student123');
 define('INSTALL_FILE_EXISTS', file_exists(__DIR__ . '/../setup/install.lock'));
 define('UPLOAD_DIR', __DIR__ . '/../uploads/students');
 

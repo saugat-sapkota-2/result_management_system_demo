@@ -140,6 +140,36 @@ body {
   background: #fff;
   min-height: 100vh;
 }
+.login-logo {
+  width: 92px;
+  height: 92px;
+  object-fit: contain;
+}
+.demo-login-copy {
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+  text-align: center;
+}
+.login-project-card {
+  border-top: 4px solid var(--rms-accent) !important;
+}
+.project-builder-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  background: var(--rms-primary);
+  color: #fff;
+  font-weight: 700;
+}
+.login-project-card dd {
+  margin-bottom: .55rem;
+  text-align: right;
+}
 
 @media print {
   .sidebar, .topbar, .app-footer, .no-print { display: none !important; }

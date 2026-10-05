@@ -33,13 +33,13 @@ include __DIR__ . '/includes/header.php';
             <div class="card-body">
                 <dl class="row mb-0 small">
                     <dt class="col-5">Name</dt>
-                    <dd class="col-7">Saugat Sapkota</dd>
+                    <dd class="col-7"><?php echo e(PROJECT_BUILDER); ?></dd>
                     <dt class="col-5">Programme</dt>
-                    <dd class="col-7">BCA 4th Semester</dd>
+                    <dd class="col-7"><?php echo e(PROJECT_PROGRAMME); ?></dd>
                     <dt class="col-5">Website</dt>
-                    <dd class="col-7"><a href="https://saugatsapkota1.com.np" target="_blank" rel="noopener">saugatsapkota1.com.np</a></dd>
+                    <dd class="col-7"><a href="<?php echo e(PROJECT_WEBSITE); ?>" target="_blank" rel="noopener">saugatsapkota1.com.np</a></dd>
                     <dt class="col-5">Profile</dt>
-                    <dd class="col-7"><a href="https://github.com/saugat-sapkota-1" target="_blank" rel="noopener">saugat-sapkota-1</a></dd>
+                    <dd class="col-7"><a href="<?php echo e(PROJECT_GITHUB); ?>" target="_blank" rel="noopener">saugat-sapkota-1</a></dd>
                 </dl>
             </div>
         </div>
